@@ -9,7 +9,7 @@ import './styles/global.css'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL.slice(0, -1)}>
       <div className="app" style={{ maxWidth: 480, margin: '0 auto', minHeight: '100dvh', background: 'var(--bg)', position: 'relative' }}>
         <Routes>
           <Route path="/" element={<Home />} />
