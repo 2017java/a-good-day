@@ -1,0 +1,36 @@
+<!--
+  好日子 Logo - 新中式印章风格
+  篆书"日"字 + 太极阴阳元素
+  朱砂红 #8B2500 | 白底
+  viewBox: 0 0 24 24 | stroke-based
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <!-- 朱砂红主色 -->
+  <defs>
+    <style>
+      .seal-stroke { fill: none; stroke: #8B2500; stroke-linecap: round; stroke-linejoin: round; }
+      .seal-fill   { fill: #8B2500; stroke: none; }
+    </style>
+  </defs>
+
+  <!-- 白色底 -->
+  <rect x="0" y="0" width="24" height="24" rx="3" fill="#FFFFFF"/>
+
+  <!-- 外框：圆角方形（印章轮廓），内收留白 -->
+  <rect x="1.2" y="1.2" width="21.6" height="21.6" rx="2.4" class="seal-stroke" stroke-width="1.6"/>
+
+  <!-- 篆书"日"字：外框矩形 -->
+  <rect x="6.5" y="5.0" width="11.0" height="14.0" rx="1.0" class="seal-stroke" stroke-width="1.8"/>
+
+  <!-- 篆书"日"字：中间横画 -->
+  <line x1="7.5" y1="12.0" x2="16.5" y2="12.0" class="seal-stroke" stroke-width="1.8"/>
+
+  <!-- 太极/阴阳元素：融入中横的S曲线 -->
+  <path d="M7.5,12.0 C9.5,10.0 11.5,10.0 12.0,12.0 C12.5,14.0 14.5,14.0 16.5,12.0" class="seal-stroke" stroke-width="0.9"/>
+
+  <!-- 太极鱼眼（阳眼）：左侧小圆 -->
+  <circle cx="9.8" cy="10.8" r="0.7" class="seal-fill"/>
+
+  <!-- 太极鱼眼（阴眼）：右侧小圆 -->
+  <circle cx="14.2" cy="13.2" r="0.7" class="seal-fill"/>
+</svg>

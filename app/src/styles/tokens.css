@@ -1,0 +1,42 @@
+:root {
+  --primary: #8B2500;
+  --primary-dark: #6B1D00;
+  --primary-light: #FDF6F3;
+  --secondary: #C8A951;
+  --secondary-light: #FDF8EC;
+  --bg: #FAF8F5;
+  --surface: #FFFFFF;
+  --text-primary: #2D2A26;
+  --text-secondary: #7A756F;
+  --text-tertiary: #A8A29E;
+  --success: #4D8C4B;
+  --success-light: #EDF5ED;
+  --danger: #C23B22;
+  --danger-light: #FCEAE7;
+  --border: #EDE9E3;
+
+  --gradient-primary-deep: linear-gradient(135deg, #7A2000 0%, #951E0E 40%, #B02818 100%);
+  --gradient-primary-whisper: linear-gradient(180deg, #FDF6F3 0%, #FAF0EB 100%);
+  --gradient-surface: linear-gradient(180deg, #FFFFFF 0%, #FDFCFA 100%);
+
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.10);
+  --shadow-primary-md: 0 4px 24px rgba(139,37,0,0.18);
+  --shadow-inset-subtle: inset 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-float: 0 12px 36px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.03);
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-pill: 999px;
+
+  --font-serif: 'Noto Serif SC', 'Songti SC', serif;
+  --font-sans: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}

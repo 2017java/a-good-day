@@ -1,0 +1,46 @@
+.profile-page {
+  padding-bottom: 80px;
+}
+
+.profile-header {
+  padding: 16px 20px 12px;
+}
+
+.profile-title {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.profile-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+}
+
+.profile-empty-icon {
+  margin-bottom: 12px;
+  opacity: 0.3;
+}
+
+.profile-empty-icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+.profile-empty-title {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.profile-empty-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.profile-bottom-spacer {
+  height: 24px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logo 预览 - 好日子</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #F5F0EB; color: #333; padding: 40px 20px; }
+    h1 { text-align: center; margin-bottom: 40px; color: #8B2500; font-weight: 300; letter-spacing: 4px; }
+    .section { max-width: 600px; margin: 0 auto 60px; }
+    .section h2 { font-size: 14px; color: #999; margin-bottom: 16px; letter-spacing: 2px; text-transform: uppercase; }
+    .preview-row { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+    .preview-card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .preview-card .label { font-size: 12px; color: #aaa; }
+    .dark-bg { background: #1a1a2e; }
+    .dark-bg .label { color: #666; }
+    .cloud-section { overflow: hidden; }
+    .cloud-section svg { width: 100%; max-width: 400px; }
+  </style>
+</head>
+<body>
+  <h1>好 日 子</h1>
+
+  <!-- Logo 预览 -->
+  <div class="section">
+    <h2>Logo - 印章风格</h2>
+    <div class="preview-row">
+      <div class="preview-card">
+        <img src="logo.svg" width="56" height="56" alt="好日子 Logo 56px">
+        <span class="label">56 x 56 px</span>
+      </div>
+      <div class="preview-card">
+        <img src="logo.svg" width="96" height="96" alt="好日子 Logo 96px">
+        <span class="label">96 x 96 px</span>
+      </div>
+      <div class="preview-card">
+        <img src="logo.svg" width="128" height="128" alt="好日子 Logo 128px">
+        <span class="label">128 x 128 px</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logo 深色背景 -->
+  <div class="section">
+    <h2>Logo - 深色背景</h2>
+    <div class="preview-row">
+      <div class="preview-card dark-bg">
+        <img src="logo.svg" width="56" height="56" alt="好日子 Logo 深色背景">
+        <span class="label">56 x 56 px</span>
+      </div>
+      <div class="preview-card dark-bg">
+        <img src="logo.svg" width="96" height="96" alt="好日子 Logo 深色背景">
+        <span class="label">96 x 96 px</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 云纹预览 -->
+  <div class="section cloud-section">
+    <h2>祥云纹装饰</h2>
+    <div class="preview-card">
+      <img src="cloud-pattern.svg" alt="中国云纹装饰">
+      <span class="label">120 x 40 - 页面装饰用</span>
+    </div>
+  </div>
+</body>
+</html>

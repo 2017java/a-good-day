@@ -1,0 +1,436 @@
+/* ===== Home Page ===== */
+
+/* --- Logo Area --- */
+.home-hero {
+  padding: 28px 20px 4px;
+  text-align: center;
+}
+
+.home-logo {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 12px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(139, 37, 0, 0.2);
+}
+
+.home-logo svg {
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+
+.home-title {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.home-subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+  letter-spacing: 2px;
+}
+
+/* --- Today Almanac Card --- */
+.today-card {
+  margin: 20px 16px 0;
+  background: var(--gradient-primary-deep);
+  border-radius: var(--radius-lg);
+  padding: 22px 20px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-primary-md);
+}
+
+/* 回纹网格纹理 */
+.today-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 20px,
+      rgba(255, 255, 255, 0.04) 20px,
+      rgba(255, 255, 255, 0.04) 21px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 20px,
+      rgba(255, 255, 255, 0.04) 20px,
+      rgba(255, 255, 255, 0.04) 21px
+    );
+  pointer-events: none;
+}
+
+.today-card > *:not(.today-cloud) {
+  position: relative;
+  z-index: 1;
+}
+
+/* 祥云装饰 */
+.today-cloud {
+  position: absolute;
+  bottom: -8px;
+  right: -12px;
+  width: 160px;
+  height: 80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.today-date-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.today-solar {
+  font-size: 32px;
+  font-weight: 700;
+  font-family: var(--font-serif);
+}
+
+.today-solar-sub {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.today-lunar {
+  font-size: 13px;
+  opacity: 0.75;
+  margin-bottom: 16px;
+}
+
+.today-ganzhi {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.ganzhi-pill {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 12px;
+  backdrop-filter: blur(8px);
+  letter-spacing: 0.5px;
+}
+
+.today-yi-ji {
+  display: flex;
+  gap: 24px;
+}
+
+.today-yi-ji .label {
+  font-size: 11px;
+  opacity: 0.65;
+  margin-bottom: 6px;
+}
+
+.today-yi-ji .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.yi-tag,
+.ji-tag {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  letter-spacing: 0.3px;
+}
+
+.yi-tag {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #c6f0c2;
+}
+
+.ji-tag {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffd0c8;
+}
+
+/* --- Section Title --- */
+.section-title {
+  padding: 24px 20px 12px;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title::before {
+  content: '';
+  width: 3px;
+  height: 16px;
+  background: var(--gradient-primary-deep);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* --- Decorative Divider --- */
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  color: var(--text-tertiary);
+}
+
+.section-divider svg {
+  width: 160px;
+  height: 12px;
+}
+
+/* --- Scene Grid --- */
+.scene-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 0 16px;
+}
+
+.scene-card {
+  background: var(--gradient-surface);
+  border-radius: var(--radius-md);
+  padding: 18px 8px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 96px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* 顶部光条 */
+.scene-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139, 37, 0, 0.08), transparent);
+  pointer-events: none;
+}
+
+.scene-card:active {
+  transform: scale(0.96);
+  border-color: var(--primary);
+  background: var(--gradient-primary-whisper);
+  box-shadow: var(--shadow-xs);
+  transition-duration: 0.1s;
+}
+
+.scene-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 8px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scene-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.scene-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.scene-desc {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* --- Calendar --- */
+.quick-calendar {
+  margin: 0 16px;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.cal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.cal-header h3 {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cal-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.cal-nav button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cal-nav button:active {
+  background: var(--primary-light);
+}
+
+.cal-nav button svg {
+  width: 14px;
+  height: 14px;
+  color: var(--text-secondary);
+}
+
+.cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.cal-weekday {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-tertiary);
+  padding: 4px 0;
+}
+
+.cal-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.cal-day {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.cal-day:active {
+  background: var(--primary-light);
+}
+
+.cal-day.today {
+  background: var(--primary);
+  color: white;
+}
+
+.cal-day.today .cal-day-lunar {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.cal-day.good {
+  border: 1.5px solid var(--success);
+}
+
+.cal-day.bad {
+  border: 1.5px solid var(--danger);
+}
+
+.cal-day.other-month {
+  color: var(--text-tertiary);
+}
+
+.cal-day-lunar {
+  font-size: 9px;
+  color: var(--text-tertiary);
+  font-weight: 400;
+}
+
+/* Calendar Legend */
+.cal-legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.cal-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.cal-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.cal-legend-dot.good {
+  border: 1.5px solid var(--success);
+}
+
+.cal-legend-dot.bad {
+  border: 1.5px solid var(--danger);
+}
+
+.cal-legend-dot.today {
+  background: var(--primary);
+}
+
+/* Bottom spacer */
+.home-spacer {
+  height: 24px;
+}

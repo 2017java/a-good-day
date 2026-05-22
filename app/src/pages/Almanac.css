@@ -1,0 +1,317 @@
+/* ===== Almanac Page ===== */
+.almanac-page {
+  padding-bottom: 90px;
+}
+
+/* Month Header */
+.almanac-month-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px 8px;
+}
+.almanac-month-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+}
+.almanac-month-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+.almanac-nav {
+  display: flex;
+  gap: 8px;
+}
+.almanac-nav-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.almanac-nav-btn:active {
+  background: var(--primary-light);
+}
+.almanac-nav-btn svg {
+  width: 14px;
+  height: 14px;
+  color: var(--text-secondary);
+}
+
+/* Calendar Grid */
+.almanac-calendar {
+  margin: 0 16px;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  box-shadow: var(--shadow-sm);
+}
+.almanac-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 4px;
+}
+.almanac-weekday {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-tertiary);
+  padding: 4px 0;
+}
+.almanac-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+.almanac-day {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s;
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  border: none;
+  background: none;
+  padding: 0;
+  min-height: 40px;
+}
+.almanac-day:active:not(.other-month) {
+  background: var(--primary-light);
+}
+.almanac-day.today {
+  background: var(--primary);
+  color: white;
+}
+.almanac-day.today .almanac-day-lunar {
+  color: rgba(255,255,255,0.7);
+}
+.almanac-day.selected {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+.almanac-day.selected .almanac-day-lunar {
+  color: var(--primary);
+}
+.almanac-day.good {
+  border: 1.5px solid var(--success);
+}
+.almanac-day.bad {
+  border: 1.5px solid var(--danger);
+}
+.almanac-day.other-month {
+  color: var(--text-tertiary);
+  cursor: default;
+}
+.almanac-day-num {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.almanac-day-lunar {
+  font-size: 9px;
+  color: var(--text-tertiary);
+  font-weight: 400;
+  line-height: 1.2;
+}
+.almanac-day:disabled {
+  cursor: default;
+}
+
+/* Legend */
+.almanac-legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+.almanac-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+.legend-box {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  display: inline-block;
+}
+.legend-good {
+  border: 1.5px solid var(--success);
+}
+.legend-bad {
+  border: 1.5px solid var(--danger);
+}
+.legend-today {
+  background: var(--primary);
+}
+
+/* Detail Card */
+.almanac-detail {
+  margin: 16px 16px 0;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.almanac-detail-header {
+  background: var(--gradient-primary-deep);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+/* Subtle grid pattern on header */
+.almanac-detail-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(255,255,255,0.04) 20px, rgba(255,255,255,0.04) 21px),
+    repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(255,255,255,0.04) 20px, rgba(255,255,255,0.04) 21px);
+  pointer-events: none;
+}
+.almanac-detail-header > * {
+  position: relative;
+  z-index: 1;
+}
+.almanac-detail-date {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+}
+.almanac-detail-lunar {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+.almanac-detail-ganzhi {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+.ganzhi-pill {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-pill);
+  padding: 4px 12px;
+  font-size: 12px;
+  backdrop-filter: blur(8px);
+  letter-spacing: 0.5px;
+}
+
+/* Detail Body */
+.almanac-detail-body {
+  padding: 4px 20px 8px;
+}
+.almanac-row {
+  display: flex;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.almanac-row:last-child {
+  border-bottom: none;
+}
+.almanac-row-label {
+  width: 48px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+.almanac-row-value {
+  flex: 1;
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+/* Yi tags - dark text on light green for white background */
+.almanac-detail .yi-tag {
+  background: var(--success-light);
+  border: 1px solid rgba(77,140,75,0.15);
+  color: #3A6E38;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.3px;
+}
+/* Ji tags - dark text on light red for white background */
+.almanac-detail .ji-tag {
+  background: var(--danger-light);
+  border: 1px solid rgba(194,59,34,0.12);
+  color: #A83020;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.3px;
+}
+
+/* Wuxing */
+.wuxing-value {
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Jishen (lucky gods) - gold tag */
+.jishen-tag {
+  background: var(--secondary-light);
+  border: 1px solid rgba(200,169,81,0.2);
+  color: #8A6B20;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.3px;
+}
+
+/* Xiongshen (unlucky gods) - danger text */
+.xiongshen-text {
+  color: var(--danger);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Jishi (lucky hours) - green text */
+.jishi-wrap {
+  gap: 8px !important;
+}
+.jishi-time {
+  font-size: 13px;
+  color: var(--success);
+  font-weight: 500;
+}
+
+/* Empty state */
+.almanac-empty {
+  color: var(--text-tertiary);
+  font-size: 13px;
+}
+
+/* Bottom spacer for tab bar */
+.almanac-bottom-spacer {
+  height: 24px;
+}
