@@ -12,12 +12,12 @@ const LUNAR_DAYS = [
 const WEEKDAY_NAMES = ['日','一','二','三','四','五','六']
 
 const SCENES = [
-  { type: 'marry',   name: '结婚', desc: '婚嫁择日', iconBg: '#FDF6F3', iconStroke: '#8B2500' },
-  { type: 'open',    name: '开业', desc: '开市择日', iconBg: '#FDF8EC', iconStroke: '#9A7B2C' },
-  { type: 'move',    name: '搬家', desc: '迁居择日', iconBg: '#EDF5ED', iconStroke: '#4D8C4B' },
-  { type: 'break',   name: '动土', desc: '开工择日', iconBg: '#F0EBF5', iconStroke: '#6B5B95' },
-  { type: 'travel',  name: '出行', desc: '远行择日', iconBg: '#E8F4F8', iconStroke: '#2D7D9A' },
-  { type: 'sign',    name: '签约', desc: '契约择日', iconBg: '#F8F4EC', iconStroke: '#8B7355' },
+  { type: 'wedding',      name: '结婚', desc: '婚嫁择日', iconBg: '#FDF6F3', iconStroke: '#8B2500' },
+  { type: 'business',     name: '开业', desc: '开市择日', iconBg: '#FDF8EC', iconStroke: '#9A7B2C' },
+  { type: 'moving',       name: '搬家', desc: '迁居择日', iconBg: '#EDF5ED', iconStroke: '#4D8C4B' },
+  { type: 'construction', name: '动土', desc: '开工择日', iconBg: '#F0EBF5', iconStroke: '#6B5B95' },
+  { type: 'travel',       name: '出行', desc: '远行择日', iconBg: '#E8F4F8', iconStroke: '#2D7D9A' },
+  { type: 'contract',     name: '签约', desc: '契约择日', iconBg: '#F8F4EC', iconStroke: '#8B7355' },
 ]
 
 /**
