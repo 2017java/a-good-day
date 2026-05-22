@@ -1,9 +1,5 @@
 import { SYSTEM_PROMPT } from './prompt'
 
-const API_BASE = import.meta.env.VITE_AI_BASE_URL
-const API_KEY = import.meta.env.VITE_AI_API_KEY
-const MODEL = import.meta.env.VITE_AI_MODEL || 'ark-code-latest'
-
 /**
  * 构建用户消息
  */
@@ -24,30 +20,20 @@ function buildUserMessage(data) {
 }
 
 /**
- * 调用 AI 生成择日解读
+ * 调用 AI 生成择日解读（通过后端代理，不暴露 API Key）
  * @param {Object} dateData - 日期数据
  * @returns {Promise<string>} AI 解读文本
  */
 export async function generateInterpretation(dateData) {
-  if (!API_BASE || !API_KEY) {
-    return null
-  }
-
   try {
-    const response = await fetch(`${API_BASE}/chat/completions`, {
+    const response = await fetch('/api/ai', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${API_KEY}`,
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: MODEL,
+        systemPrompt: SYSTEM_PROMPT,
         messages: [
-          { role: 'system', content: SYSTEM_PROMPT },
           { role: 'user', content: buildUserMessage(dateData) },
         ],
-        temperature: 0.7,
-        max_tokens: 300,
       }),
     })
 
@@ -57,22 +43,9 @@ export async function generateInterpretation(dateData) {
     }
 
     const result = await response.json()
-    return result.choices?.[0]?.message?.content || null
+    return result.content || null
   } catch (err) {
     console.error('AI interpretation failed:', err)
     return null
   }
-}
-
-/**
- * 批量生成多个日期的 AI 解读（带节流）
- */
-export async function generateBatchInterpretations(dates, onEach) {
-  const results = []
-  for (const date of dates) {
-    const text = await generateInterpretation(date)
-    results.push(text)
-    onEach?.(text, results.length)
-  }
-  return results
 }
